@@ -1,0 +1,46 @@
+﻿@model PartyInvites1.Models.GuestResponse
+
+@{
+//Layout = null;
+}
+
+    <h1>Enter your Info down below:</h1>
+    <div>
+        @using (Html.BeginForm())
+        {
+        <div style="color:red">
+            @Html.ValidationSummary()
+        </div>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Your name:</td>
+                        <td>@Html.TextBoxFor(x => x.Emri)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Your Subname:</td>
+                        <td> @Html.TextBoxFor(x => x.Mbiemri)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Your gender:(M/F)</td>
+                        <td>@Html.TextBoxFor(x => x.Gjnia)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Will you attend?</td>
+                        <td>
+                            @Html.DropDownListFor(x => x.DoVije,
+               new[] {
+                   new SelectListItem() {Text = "Yes, I'll be there",Value = bool.TrueString},
+                   new SelectListItem() {Text = "No, I can't come",Value = bool.FalseString}
+               }, "Choose an option")
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Submit RSVP" />
+        }
+    </div>

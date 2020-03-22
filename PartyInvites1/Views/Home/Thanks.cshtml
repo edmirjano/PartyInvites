@@ -1,0 +1,15 @@
+﻿@model PartyInvites1.Models.GuestResponse
+
+@{
+//Layout = null;
+}
+
+<h1>Thank you, @Model.Emri!</h1>
+
+@if (Model.DoVije == true){
+    <h1 style="color:green">Beers are ready!</h1>
+}
+else
+{
+<h1 style="color:red">Sorry to hear that, see you next time!</h1>
+}
